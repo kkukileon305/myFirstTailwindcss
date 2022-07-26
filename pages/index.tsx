@@ -1,17 +1,13 @@
 import type { NextPage } from 'next';
 import Header from '../components/Header';
 import { BsChevronDoubleDown } from 'react-icons/bs';
-import Menu from '../components/Menu';
 import { useState } from 'react';
 
 const Home: NextPage = () => {
-  const [menu, setMenu] = useState(false);
-
   return (
     <>
-      <Menu menu={menu} setMenu={setMenu} />
-      <Header setMenu={setMenu} />
-      <main className='mt-36 flex flex-col items-center px-8'>
+      <Header />
+      <main className={`mt-32 flex flex-col items-center px-8`}>
         <div className='w-52 h-52 rounded-full border-2 bg-sky-200'></div>
         <h2 className='font-bold mt-10 text-2xl'>Hello!, I&apos;m Newbie.</h2>
         <p className='font-light mx-auto mt-8 w-full text-gray-400 break-all'>
