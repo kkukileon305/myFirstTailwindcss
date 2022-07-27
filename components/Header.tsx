@@ -70,20 +70,20 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed z-10 overflow-hidden bg-white w-full h-full ${menu ? 'max-h-full' : 'max-h-16'} transition-max-height duration-500 top-0 p-2 shadow-md`}>
-      <div className='flex justify-between items-center'>
+    <header className={`fixed z-10 overflow-hidden bg-white w-full h-full ${menu ? 'max-h-full' : 'max-h-16'} transition-max-height duration-500 top-0 p-2 shadow-md lg:flex`}>
+      <div className='flex justify-between items-center lg:w-full'>
         <h2 className='font-bold text-2xl ml-2'>My Portfolio</h2>
-        <div className='flex gap-2 items-center'>
+        <div className='flex gap-2 items-center '>
           <button //
             className={`${homeTouched ? 'bg-slate-300 duration-100' : 'duration-300'} w-12 h-12 rounded-lg flex justify-center items-center`}
             onTouchStart={homeBtnStart}
             onTouchEnd={homeBtnEnd}
             onTouchCancel={homeBtnEnd}
           >
-            <AiFillHome size={30} />
+            <AiFillHome size={30} onClick={() => router.push('/')} />
           </button>
           <button //
-            className={`${menuTouched ? 'bg-slate-300 duration-100' : 'duration-300'} w-12 h-12 flex justify-center items-center rounded-lg`}
+            className={`${menuTouched ? 'bg-slate-300 duration-100' : 'duration-300'} lg:hidden w-12 h-12 flex justify-center items-center rounded-lg`}
             onTouchStart={touchStartHandler}
             onTouchEnd={touchEndHandler}
             onTouchCancel={touchEndHandler}
@@ -92,7 +92,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <div className={`mt-4 mx-2 duration-300 ${menu ? 'delay-500 opacity-100' : 'delay-0 opacity-0'}`}>
+      <div className={`mt-4 mx-2 lg:hidden duration-300 ${menu ? 'delay-500 opacity-100' : 'delay-0 opacity-0'}`}>
         <div className='border-2 mb-4 flex gap-1 items-center rounded-lg px-2'>
           <IoMdSearch className='text-slate-500' size={24} />
           <input type='text' onChange={changeHandler} className='w-full h-8 py-4 pl-2 text-slate-700 font-light focus:outline-none placeholder:font-light' ref={inputRef} placeholder='디바운싱 0.5s...' />
